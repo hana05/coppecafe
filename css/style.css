@@ -1,0 +1,726 @@
+@charset "utf-8";
+
+/*--------------------------
+	共通の設定/=iPhone 320px(縦)からの設定 /
+-------------------------- */
+*{
+	box-sizing: border-box;
+	/*outline: solid 1px hsla(359,100%,52%,1.00);*/
+}
+html{
+	font-size: 62.5%;/*初期値10px設定*/
+}
+body{
+	font-size: 1.6rem;/*chorome対応注意！*/
+	font-family: 'Noto Serif JP', serif;
+}
+h2 {
+	font-size: 3rem;
+	font-family: 'Parisienne', cursive;
+}
+h3 {
+	font-size: 2.4rem;
+}
+img{
+	width: 100%;
+	height:auto;
+}
+li {
+	list-style: none;
+}
+.main_wrapper {
+	background-color: #fff;
+}
+/*header {
+	background-image:url(../img/damy1500_600.jpg);
+	background-size: cover;
+	background-position: top center;
+}*/
+
+/*header section {
+	width: 100%;
+	height: 100vh;
+	display: table;
+}*/
+
+.loader-wrap {
+	background-color: black;
+	width: 100%;
+	height :100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+}
+.loader {
+	border: 12px solid #fff;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	animation: spin 2s linear infinite;
+}
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  50%{
+    transform: rotate(360deg);
+	border-radius: 0%;
+	width: 20px;
+	height: 20px;
+	border: 5px double #fff;
+  }
+  100% {
+	transform: rotate(360deg);
+}
+}
+
+main {
+	background-color: #fff;
+	padding-top: 30px;
+}
+.header_wrapper {
+	 width: 100%;
+     height: 100vh;
+	 position: fixed;
+	 left: 0;
+	 top: 0;
+}
+.header_inner h1 {
+	width: 30%;
+}
+.logo h1{
+	width: 18%;
+}
+.header_inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/*ハンバーガーアイコン*/
+#toggle {
+	display: block;
+	text-align: center;
+	width: 55px;
+	height: 55px;
+	position: fixed;
+	top: 10px;
+	right: 15px;
+	z-index: 10;
+	color: #000;
+}
+
+/*アイコン・アニメーション*/
+.trigger, .trigger span {
+	display: inline-block;
+	transition: all .4s;
+}
+.trigger {
+	position: relative;
+	width: 28px;
+	height: 19px;
+}
+.trigger span {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #000;
+	border-radius: 4px;
+}
+.trigger span:nth-of-type(1) {
+	top: 0;
+}
+.trigger span:nth-of-type(2) {
+	top: 8px;
+	width: 20px;
+}
+.trigger span:nth-of-type(2)::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 3px;
+	background-color: #000;
+	border-radius: 4px;
+	transition: all .4s;
+}
+.trigger span:nth-of-type(3) {
+	bottom: 0;
+}
+.trigger.active span:nth-of-type(1) {
+	transform: translateY(8px) scale(0);
+}
+.trigger.active span:nth-of-type(2) {
+	transform: rotate(-45deg);
+}
+.trigger.active span:nth-of-type(2)::after {
+	transform: rotate(90deg);
+}
+.trigger.active span:nth-of-type(3) {
+	transform: translateY(-8px) scale(0);
+}
+
+/*グローバルナビ部分*/
+.togglewrap {
+	background: rgba(234, 234, 234, 0.7);
+	padding: 50px 15px 10px 15px;
+	position: fixed;	
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.navItem {
+	display: block;
+	text-decoration: none;
+	color: #3e3e3e;
+	border-bottom: 1px solid #ccc;
+	padding: 15px 0;
+	text-align: center;
+	font-size: 2rem;
+}
+/*ナビを消す*/
+.hide {
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+.animation {
+	transition-property:visibility;
+	transition-duration: .3s;
+	transition-timing-function: ease-in;
+}
+.no-scroll {
+	overflow: hidden;
+}
+header {
+	margin-bottom: 100px;
+}
+.gototop{
+	text-align: right;
+}
+
+.sub_logo_bottom {
+	max-width: 15%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.sub_logo_top {
+	max-width: 15%;
+	margin: 0 auto;
+}
+/*.main {
+	position: relative;
+	top: 100vh;
+}*/
+/*コンセプト*/
+.concept {
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 150px;
+}
+.concept_title,.menu_title,.drink_title,.access_title {
+	margin-bottom: 30px;
+}
+.sub_title { /*サブタイトル共通*/
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+.concept_txt {
+	line-height: 2;
+	padding: 0 5%;
+}
+.concept_txt p {
+	padding-bottom: 3%;
+}
+/*コッペパン*/
+.coppepan {
+	margin-bottom: 150px;
+	position: relative;
+}
+.coppepan_title {
+	max-width: 45%;
+	background-color: #483131;
+	padding: 5%;
+	position: absolute;
+	top: -10rem;
+	left: 2rem;	
+	z-index: 100;
+	font-size: 13px;
+}
+.coppepan_title p {
+	color: #fff;
+	line-height: 2;
+}
+.coppepan_txt {
+	max-width: 80%;
+	background-color: #EBEBEB;
+	padding: 5%;
+	position: relative;
+	top: -2rem;
+	z-index: 100;
+	margin: 0 auto;
+	line-height: 2;
+}
+.coppepan_img {
+	position: relative;
+}
+/*coffee*/
+.coffee {
+	margin-bottom: 70px;
+	position: relative;
+}
+.coffee_title {
+	max-width: 40%;
+	background-color: #483131;
+	padding: 5%;
+	position: absolute;
+	top: -10rem;
+	right: 2rem;
+	z-index: 100;
+	font-size: 13px;
+}
+.coffee_title p {
+	color: #fff;
+	line-height: 2;
+}
+.middle_txt {
+	font-size: 1.5rem;
+}
+.coffee_txt {
+	max-width: 80%;
+	background-color: #EBEBEB;
+	padding: 5%;
+	position: relative;
+	top: -2rem;
+	z-index: 100;
+	margin: 0 auto;
+	line-height: 2;
+}
+/*.coffee_img {
+	position: relative;
+}*/
+/*menu*/
+.menu {
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 80px;
+}
+.choice {
+	margin-bottom: 50px;
+}
+.choice_inner {
+	padding: 3%;
+	max-width: 70%;
+	margin: 0 auto;
+	background-color: #EBEBEB ;
+}
+.my-parts_wrapper {
+	padding: 30px 0;
+}
+.my-parts {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	cursor: pointer;
+}
+.my-parts span::before,
+.my-parts span::after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 84%;
+	height: 16%;
+	margin: -8% 0 0 -42%;
+	background-color: #483131;
+}
+.my-parts span::after {
+	transform: rotate(90deg);
+}
+.komugi {
+	margin-bottom: 30px;
+}
+.pan_choice h3,.topping_choice h3 {
+	margin-bottom: 30px;
+	font-size: 2.8rem;
+}
+.pan_choice img {
+	max-width: 80%;
+}
+.pan_img {
+	margin-bottom: 30px;
+}
+.pan_choice p {
+	font-weight: bold;
+}
+.topping_choice p {
+	padding-top: 2%;
+}
+.toppingu_pic {
+	width: 25%;
+	margin: 5%;
+}
+.topping_up,.topping_low {
+	display: flex;
+	justify-content: space-between;
+}
+/*ドリンク*/
+.drink_menu {
+	margin: 0 auto;
+	margin-bottom: 80px;
+}
+.drink_title h2, .drink_title p,.access_title h2,.access_title p {
+	text-align: center;
+}
+.setdrink {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 30px;
+}
+.drink_txt {
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 5%;
+	background-color: #EBEBEB;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+.drink_pic {
+	max-width: 80%;
+	margin: 0 auto;
+}
+/*グーグルマップ*/
+.googlemap {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+margin-bottom: 30px; 
+margin: 0 auto;
+}
+ 
+.googlemap iframe,
+.googlemap object,
+.googlemap embed {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 90%;
+height: 90%;
+margin: 0 auto;
+}
+.access_name {
+	font-size: 2.5rem;
+}
+.access_txt {
+	line-height: 2;
+	max-width: 90%;
+	margin: 0 auto;
+	border-left: solid 4px #000;
+}
+.access_txt_inner {
+	padding-left: 10px;
+}
+.access {
+	padding-bottom: 50px;
+	margin: 0 auto;
+}
+/*フッター*/
+footer {
+	background-color: #fff;
+	padding-bottom: 20px;
+}
+.sub_logo {
+		max-width: 18%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+.footer_inner {
+	text-align: center;
+	/*background-color: #fff;*/
+}
+.coppe_cafe {
+	font-size: 1.4rem;
+}
+.footer_border {
+	border-top: solid 2px #000;
+	padding-top: 20px;
+}
+.copylight {
+	padding-bottom: 30px;
+}
+.sns {
+	max-width: 30%;
+	margin-left: auto;
+}
+.sns ul {
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+}
+.sns li {
+	padding: 0 5px;
+}
+.sns a {
+	color: #000;
+}
+.sns li a:hover {
+	color: #483131;
+}
+#gototop {
+width: 50px;
+height: 50px;
+position: fixed;
+right: 10px;
+bottom: 80px;
+background: #EBEBEB; /*ボタンの色*/
+/*opacity: 0.8;*/
+border-radius: 50%; /*角の丸み*/
+margin-right: 5%;
+margin-bottom: 20px;
+
+}
+#gototop a{
+position: relative;
+display: block;
+width: 50px;
+height: 50px;
+text-decoration: none;
+}
+#gototop a::before{
+font-family: "Font Awesome 5 Free";
+content: "\f102"; /*アイコン*/
+font-weight: 900;
+font-size: 25px;
+color: #fff; /*アイコンの色*/
+position: absolute;
+width: 25px;
+height: 25px;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+margin: auto;
+text-align: center;
+}
+/*
+--------------------------
+	タブレット / iPad 768px(縦)から1023pxまでの設定 /
+-------------------------- */
+
+@media screen and (min-width:768px){
+    header h1 {
+	font-size: 6em;
+	letter-spacing: 0.1em;
+}
+	h3 {
+		font-size: 2.6rem;
+	}
+/*グローバルナビ部分*/
+.togglewrap {
+	background: none;
+	height: auto;
+	position: fixed;
+	z-index: 1000;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	background-color: rgba(21,21,21,.4);
+}
+
+.g_nav {
+	display: flex;
+	justify-content: flex-end;
+	/*overflow: hidden;*/
+	margin-left: auto;
+}
+.navItem {
+	width: 10%;
+	/*float: left;*/
+	padding: 5px 10px;
+	color: #fff;
+	border:none;
+	position: relative;
+	display: inline-block;
+}
+ .navItem::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+	}	
+.navItem:hover::after {
+	transform: scale(1, 1);
+}
+.animation {
+	transition: none;
+}
+	
+/* 非表示にしていたナビを表示させる */
+.hide {
+	opacity: 1;
+	visibility: visible;
+}
+/*ハンバーガー消す*/
+#toggle {
+	display: none;
+}
+	
+/*メインメニュー編集*/
+	.concept {
+		padding-top: 100px;
+		max-width: 80%;	
+		margin-bottom: 200px;
+		position: relative;
+	}
+	h2 {
+		font-size: 4rem;
+	}
+	.concept_txt {
+		max-width: 70%;
+		background-color: #fff;
+		position: absolute;
+		right: -150px;
+		top: 260px;
+		text-align: left;
+	}
+	.concept_title {
+		padding-bottom: 50px;
+		margin: 0;
+	}
+	/*コッペパン*/
+   .coppepan_title,.coffee_title {
+	   font-size: 16px;
+}
+	.coppepan {
+		margin-bottom: 150px;
+	}
+	
+	/*コッペパン*/
+.coppepan {
+	position: relative;
+}
+.coppepan_title {
+	max-width: 45%;
+	background-color: #fff;
+	padding: 3%;
+	position: absolute;
+	top: -5rem;
+	left: -2rem;
+	z-index: 100;
+	line-height: 1.4;
+}
+.coppepan_title p {
+	color: #483131;
+	line-height: 2;
+}
+.coppepan_txt {
+	max-width: 80%;
+	background-color: #EBEBEB;
+	padding: 5%;
+	position: relative;
+	top: -2rem;
+	z-index: 100;
+	margin: 0 auto;
+	line-height: 2;
+}
+.coppepan_img {
+	position: relative;
+}
+/*coffee*/
+.coffee {
+	margin-bottom: 70px;
+	position: relative;
+}
+.coffee_title {
+	max-width: 45%;
+	background-color: #fff;
+	padding: 3%;
+	position: absolute;
+	top: -5rem;
+	right: -2rem;
+	z-index: 100;
+	line-height: 1.4;
+}
+.coffee_title p {
+	color: #483131;
+	line-height: 2;
+}
+.middle_txt {
+	font-size: 2rem;
+}
+.coffee_txt {
+	max-width: 80%;
+	background-color: #EBEBEB;
+	padding: 5%;
+	position: relative;
+	top: -2rem;
+	z-index: 100;
+	margin: 0 auto;
+	line-height: 2;
+}
+	
+	.choice {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.choice_inner {
+		text-align: center;
+		width: 40%;
+	}
+	.pan_choice_inner {
+		display: flex;
+		justify-content: center;
+		padding: 2rem 4rem;
+	}
+	.komugi,.kurocoppe {
+		width: 50%;
+	}
+	.drink_menu {
+		display: flex;
+		justify-content: center;
+	}
+	.drink_inner {
+		width: 40%;
+		padding-top: 30px;
+	}
+	.drink_pic {
+		width: 50%;
+	}
+	.sub_logo {
+		max-width: 18%;
+		margin: 0 auto;
+		margin-bottom: 50px;
+	}
+	#gototop {
+		margin-right: 5%;
+    }
+}
+/*--------------------------
+	PC /1024px以上の設定/
+-------------------------- */
+@media screen and (min-width:1024px) {
+  main {
+		width: 75%;
+		margin: 0 auto;
+		/*border-left:solid 1px #ccc;
+		border-right:solid 1px #ccc;*/
+	}	
+}
+
